@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <style>
+                body {
+                        font-family: sans-serif;     
+                }
+                
+                #control h1 {
+                        margin-top: 0;
+                }
+                #canvas, #control {
+                        width: calc(50% - 40px);
+                        position: absolute;
+                        top: 0;
+                        padding: 20px;
+                        height: calc(100% - 40px);
+                }
+                #canvas {
+                        left: 0;
+                        background-color: beige;
+                }
+                #control {
+                        right: 0;
+                }
+        </style>
+</head>
+
+<body>
+
+        <div id="canvas"></div>
+
+        <div id="control">
+                <h1>TREAT Developer Tool</h1>
+                <div v-if="application !== null">
+                        <h3>Inputs</h3>
+                        <div v-for="(data, key) in application.inputs">
+                                <b>{{ key }}</b>
+                                <input v-bind:name="key" @change="onInputChange" v-bind:value="data" />
+                        </div>
+                </div>
+                <div v-if="application !== null">
+                        <h3>Outputs</h3>
+                        <div v-for="(data, key) in application.outputs">
+                                <b>{{ key }}</b>
+                                <code>{{ data }}</code>
+                        </div>
+                </div>
+        </div>
+
+        <script src="app.js"></script>
+</body>
+
+</html>

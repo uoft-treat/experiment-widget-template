@@ -1,0 +1,7 @@
+{
+    "name": "demo-widget",
+    "author": "Jun Zheng (me at jackzh dot com)",
+    "template": "widget.html",
+    "script": "widget.js",
+    "style": "widget.css"
+}

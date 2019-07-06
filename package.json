@@ -1,0 +1,22 @@
+{
+  "name": "@uoft-treat/experiment-widget-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files && jszip dist -o widget.zip",
+    "build:watch": "babel src --out-dir dist --copy --watch",
+    "start": "concurrently \"npm run build:watch\" \"node .treat/server.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jun Zheng",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "concurrently": "^4.1.1",
+    "express": "^4.17.1",
+    "jszip-cli": "^1.4.24"
+  }
+}
